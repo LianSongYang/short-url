@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "short-url"
+version = "0.1.0"
+description = ""
+authors = ["LianSongYang <a19901229s@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+whitenoise = "^6.8.2"
+gunicorn = "^23.0.0"
+django = "^5.1.4"
+
+
+
+[tool.poetry.group.dev.dependencies]
+python-dotenv = "^1.0.1"
+django-extensions = "^3.2.3"
+django-debug-toolbar = "^4.4.6"
+pre-commit = "^4.0.1"
+commitizen = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

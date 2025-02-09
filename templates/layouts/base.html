@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}縮網址工具{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- 導覽列 -->
+    <nav class="p-4 text-white bg-blue-600">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-lg font-bold">縮網址工具</h1>
+        </div>
+    </nav>
+
+    <!-- 主要內容區塊 -->
+    <div class="max-w-4xl p-6 mx-auto">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- 頁腳 -->
+    <footer class="py-4 text-center text-gray-600">
+        &copy; 2024 縮網址服務 - Powered by Django
+    </footer>
+</body>
+</html>

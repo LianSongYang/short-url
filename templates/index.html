@@ -1,0 +1,45 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+
+{% block title %}產生短網址{% endblock %}
+
+{% block content %}
+
+
+
+<div x-data="urlShortener" class="p-6 bg-white rounded-lg shadow-md">
+    {% csrf_token %}
+    
+    <h2 class="mb-4 text-2xl font-bold text-gray-800">縮網址工具</h2>
+    
+    <div class="mb-4">
+        <label class="block font-semibold text-gray-700">連結</label>
+        <input x-model="long_url" type="text" placeholder="請輸入網址"
+            class="w-full p-2 mt-1 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none" />
+    </div>
+
+    <div class="mb-4">
+        <label class="block font-semibold text-gray-700">短網址</label>
+        <input x-model="short_url" type="text" class="w-full p-2 mt-1 bg-gray-100 border rounded-md" readonly />
+    </div>
+
+    <div class="mb-4">
+        <label class="block font-semibold text-gray-700">備註說明</label>
+        <textarea x-model="description" placeholder="可輸入描述..."
+                class="w-full p-2 mt-1 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"></textarea>
+    </div>
+
+    <div class="flex items-center mb-4">
+        <input id="enable" type="checkbox" x-model="is_active" class="w-5 h-5 text-blue-600 rounded-md">
+        <label for="enable" class="ml-2 text-gray-700">是否啟用</label>
+    </div>
+    
+    <button @click="generateShortURL()" class="w-full py-2 text-white transition bg-blue-600 rounded-md hover:bg-blue-700">
+        產生短網址
+    </button>
+</div>
+
+<script src="{% static 'scripts/app.js' %}" defer></script>
+<link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+{% endblock %}
